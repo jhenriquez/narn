@@ -17,7 +17,11 @@ function narrate(digit, acc) {
 	}
 
 	if(digit < 1000000) {
-		return narrate(digit % 1000, narrate(Math.floor(digit / 1000), '') + ' thousand ');
+		return acc + narrate(digit % 1000, narrate(Math.floor(digit / 1000), '') + ' thousand ');
+	}
+
+	if(digit < 1000000000) {
+		return narrate(digit % 1000000, narrate(Math.floor(digit / 1000000), '') + ' million ');
 	}
 
 	return "Uff! Can't handle it!";
