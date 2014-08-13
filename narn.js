@@ -3,6 +3,8 @@ var simple = ['','one','two','three','four','five','six','seven','eight','nine',
 var niners = ['','','twenty','thirty','fourty','fivety','sixty','seventy','eighty','ninety'];
 var biggies = ['','','','hundred','thousand'];
 
+var number = process.argv[2];
+
 function narrate(digit, acc) {
 	if(digit < 20) return (acc + simple[digit]).trim();
 	if(digit < 100) return narrate(digit % 10,acc + niners[Math.floor(digit/10)] + ' ');
@@ -20,3 +22,5 @@ function narrate(digit, acc) {
 
 	return "Uff! Can't handle it!";
 }
+
+console.log(narrate(number,''));
