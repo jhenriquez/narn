@@ -16,7 +16,7 @@ function narrate(digit, acc) {
 		return narrate(remaining, acc + simple[number] + ' ' + biggies[length] + ' ');
 	}
 
-	if(digit < 100000) {
+	if(digit < 1000000) {
 		return narrate(digit % 1000, narrate(Math.floor(digit / 1000), '') + ' thousand ');
 	}
 
